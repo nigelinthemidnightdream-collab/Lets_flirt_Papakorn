@@ -1,6 +1,10 @@
+import sys
 from PySide6 import QtCore, QtGui, QtWidgets
 from shiboken6 import wrapInstance
 import maya.OpenMayaUI as omui
+
+sys.path.append(r"C:/Users/jajap/OneDrive/Documents/maya/2026/scripts/Lets_flirt_Papakorn")
+from LowPoly import LowPolyDialog
 
 ROOT_RESOURCE_DIR = 'C:/Users/jajap/OneDrive/Documents/maya/2026/scripts'
 
@@ -9,17 +13,17 @@ class LetsFlirtDialog(QtWidgets.QDialog):
         super().__init__(parent)
 
         self.setWindowTitle("🤓 Let's go flirt with Papakorn")
-        self.resize(1280, 720)
-        self.setStyleSheet('background-color: #6095FE;')
+        self.resize(1180, 650)
+        self.setStyleSheet('background-color: #6095FE')
 
         self.mainLayout = QtWidgets.QVBoxLayout()
         self.mainLayout.setAlignment(QtCore.Qt.AlignCenter)
         self.setLayout(self.mainLayout)
 
         self.imageLabel = QtWidgets.QLabel()
-        self.imagePixmap = QtGui.QPixmap(f"{ROOT_RESOURCE_DIR}/Lets_flirt_Papakorn/Title_Papakorn.png")
+        self.imagePixmap = QtGui.QPixmap(f"{ROOT_RESOURCE_DIR}/Lets_flirt_Papakorn/images/Title_Papakorn.png")
         scaled_pixmap = self.imagePixmap.scaled(
-            QtCore.QSize(720, 250),
+            QtCore.QSize(800, 250),
             QtCore.Qt.KeepAspectRatio,
             QtCore.Qt.SmoothTransformation
         )
@@ -30,7 +34,7 @@ class LetsFlirtDialog(QtWidgets.QDialog):
         button_style = '''
             QPushButton {
                 background-color: #F2F2EB;
-                color: blue;
+                color: #275AF2;
                 border-radius: 8px;
                 font-size: 26px;
                 font-family: Candara;
@@ -53,6 +57,7 @@ class LetsFlirtDialog(QtWidgets.QDialog):
 
         self.lowPolyButton = QtWidgets.QPushButton('Low Poly')
         self.lowPolyButton.setStyleSheet(button_style)
+        self.lowPolyButton.clicked.connect(self.openLowPoly)
 
         self.tposeButton = QtWidgets.QPushButton('T-pose + Reverse face')
         self.tposeButton.setStyleSheet(button_style)
@@ -91,6 +96,15 @@ class LetsFlirtDialog(QtWidgets.QDialog):
         bottomLayout.addStretch()
         bottomLayout.addWidget(self.exitButton)
         self.mainLayout.addLayout(bottomLayout)
+
+        self.popup = None 
+
+    def openLowPoly(self):
+        if not self.popup:
+            self.popup = LowPolyDialog(self)
+        self.popup.show()
+        self.popup.raise_()
+
 
 def run():
     global ui
