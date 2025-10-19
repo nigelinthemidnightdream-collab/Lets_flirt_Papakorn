@@ -10,12 +10,10 @@ class LowPolyDialog(QtWidgets.QDialog):
         self.resize(890, 650)
         self.setStyleSheet("background-color: #6095FE;")
 
-        # =============== MAIN LAYOUT ===================
         self.mainLayout = QtWidgets.QVBoxLayout(self)
         self.mainLayout.setContentsMargins(0, 0, 0, 0)
         self.mainLayout.setSpacing(0)
 
-        # ---------------- IMAGE (CHARACTER) ----------------
         self.imageLabel = QtWidgets.QLabel()
         pixmap = QtGui.QPixmap(f"{ROOT_RESOURCE_DIR}/Lets_flirt_Papakorn/images/Low_Poly.png")
         scaled_pixmap = pixmap.scaled(
@@ -65,7 +63,6 @@ class LowPolyDialog(QtWidgets.QDialog):
         """)
         textLayout.addWidget(self.textLabel, stretch=1)
 
-        # ---- Click button ----
         self.clickButton = QtWidgets.QPushButton("Click >>>")
         self.clickButton.setFixedSize(100, 40)
         self.clickButton.setCursor(QtCore.Qt.PointingHandCursor)
