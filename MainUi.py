@@ -63,7 +63,7 @@ class LetsFlirtDialog(QtWidgets.QDialog):
         self.lowPolyButton.setStyleSheet(button_style)
         self.lowPolyButton.clicked.connect(self.openLowPoly)
 
-        self.tposeButton = QtWidgets.QPushButton('Reverse face & T-pose')
+        self.tposeButton = QtWidgets.QPushButton('Reverse face + T-pose')
         self.tposeButton.setStyleSheet(button_style)
         self.tposeButton.clicked.connect(self.openReversenTpose)
 
