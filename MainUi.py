@@ -4,10 +4,10 @@ from shiboken6 import wrapInstance
 import maya.OpenMayaUI as omui
 
 sys.path.append(r'C:/Users/jajap/OneDrive/Documents/maya/2026/scripts/Lets_flirt_Papakorn')
-from LowPoly import LowPolyDialog
-from ReverseFacenTpose import ReverseFaceNTposeDialog
-from BrokenTexture import BrokenTexturesDialog
-from Secret import SecretDialog
+from LowPolyUtil import LowPolyDialog
+from ReverseFacenTposeUtil import ReverseFaceNTposeDialog
+from BrokenTextureUtil import BrokenTexturesDialog
+from SecretUtil import SecretDialog
 
 ROOT_RESOURCE_DIR = 'C:/Users/jajap/OneDrive/Documents/maya/2026/scripts'
 
