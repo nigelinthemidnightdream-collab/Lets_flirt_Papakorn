@@ -154,7 +154,7 @@ class SecretDialog(QtWidgets.QDialog):
             if self.sceneIndex < len(self.scenes):
                 self.showScene(self.scenes[self.sceneIndex])
             else:
-                self.textLabel.setText('ขอบคุณที่ชอบฝ่าฟันมาหาปภกรณ์ตัวจริง หวังว่าจะได้ทำให้อมยิ้มได้นะ 💙')
+                self.textLabel.setText('ขอบคุณที่ฝ่าฟันมาหาปภกรณ์ตัวจริง หวังว่าจะได้ทำให้อมยิ้มได้นะ 💙')
                 self.clickButton.hide()
         else:
             current_scene = self.scenes[self.sceneIndex]
